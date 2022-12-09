@@ -1,45 +1,43 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - a simple program that outputs unordered
+ * combinations of two digit integers without duplicates
  *
- * Return: Always 0 (Succes)
+ * Return: 0 on success
  */
-
 int main(void)
 {
-	int tho;
-	int hun;
-	int ten;
-	int bas;
+	int ifirst;
+	int i;
+	int jfirst;
+	int j;
 
-for ( tho = 0 ; tho < 10 ; tho++)
-{	
-
-	for (hun = 0 ; hun <= 10 ; hun++)
+	for (ifirst = 48; ifirst < 58; ifirst++)
 	{
-	
-		for (ten = 0 ; ten < 10 ; ten++)
+		for (i = 48; i < 58; i++)
 		{
-			for ( bas = 0 ; bas < 10 ; bas++)
+			j = i + 1;
+			jfirst = ifirst;
+			for (; jfirst < 58; jfirst++)
 			{
-				putchar('0' + tho);
-				putchar('0' + hun);
-				putchar(32);
-				putchar('0' + ten);
-				putchar('0' + bas);
-				if (!(tho == 9 && hun == 8))
+				for (; j < 58; j++)
 				{
-					putchar(',');
-					putchar(32);
+					putchar(ifirst);
+					putchar(i);
+					putchar(' ');
+					putchar(jfirst);
+					putchar(j);
+					if (ifirst != 57 || jfirst != 57 || i != 56 || j != 57)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-				bas++;
+				j = 48;
 			}
 		}
 	}
-}
 	putchar('\n');
 	return (0);
 }
-
-
