@@ -1,13 +1,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "__hash_table.h"
+#include "hash_tables.h"
 
 /**
- * main - check the code for 
- * 
- * Return: Always Exit_sucess
-*/
+ * main - check the code for
+ *
+ * Return: Always EXIT_SUCCESS.
+ */
 int main(void)
 {
     hash_table_t *ht;
